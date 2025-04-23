@@ -10,14 +10,24 @@
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
 
 <style>
-    #clustrmaps-container {
-      transform: scale(0.4);  /* You can adjust this value */
-      transform-origin: bottom right;
-      right: 20px !important;
-      bottom: 20px !important;
-      z-index: 9999;
-    }
-  </style>
+  /* Resize and position the ClustrMaps globe */
+  #clustrmaps-container,
+  #clustr_globe {
+    transform: scale(0.4); /* Change 0.4 to something smaller if needed */
+    transform-origin: bottom right;
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    z-index: 9999;
+    pointer-events: none; /* Optional: avoid blocking clicks */
+  }
+
+  canvas#clustr_globe_canvas {
+    width: 150px !important;
+    height: 150px !important;
+  }
+</style>
+
 </head>
 
 <body>
