@@ -13,7 +13,7 @@
   /* Resize and position the ClustrMaps globe */
   #clustrmaps-container,
   #clustr_globe {
-    transform: scale(0.4); /* Change 0.4 to something smaller if needed */
+    transform: scale(0.2); /* Change 0.4 to something smaller if needed */
     transform-origin: bottom right;
     position: fixed !important;
     bottom: 20px !important;
@@ -225,7 +225,24 @@
 
     </tbody></table>
 
-	<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=amptIjg8H7b08cqZ-2ZmsgShk3YFlFY-iP1HDoz71lc&cl=ffffff&w=a"></script>
+	/*<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=amptIjg8H7b08cqZ-2ZmsgShk3YFlFY-iP1HDoz71lc&cl=ffffff&w=a"></script>*/
+      <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=amptIjg8H7b08cqZ-2ZmsgShk3YFlFY-iP1HDoz71lc"></script>
+	<script>
+	  window.addEventListener('load', function () {
+	    const checkGlobe = setInterval(() => {
+	      const globe = document.getElementById('clustr_globe_canvas');
+	      if (globe) {
+	        globe.style.width = '120px';
+	        globe.style.height = '120px';
+	        globe.style.right = '10px';
+	        globe.style.bottom = '10px';
+	        globe.style.zIndex = '9999';
+	        clearInterval(checkGlobe);
+	      }
+	    }, 200);
+	  });
+	</script>
+	      
       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <tr>
           <td style="padding:0px">
